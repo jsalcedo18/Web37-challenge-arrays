@@ -46,8 +46,12 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-    /*your code here*/
+    return [...array];
 }    
+
+const arrayCopy = copy(originalFlavors);
+
+console.log(arrayCopy);
 
 
 
