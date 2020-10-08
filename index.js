@@ -91,18 +91,18 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-function addFlavor(newFlavor, ori){
+function addFlavor(ori, newFlavor){
     ori.unshift(newFlavor);
     return ori;
   }
 
-  addFlavor("Rainbow Sherbert", originalFlavors);
+  console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
-  console.log(originalFlavors);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
-Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
+Houston, we have a problem! There are now 32 flavors in the originalFlavors array! 
+Your task is to remove an item from the end of the array. 
 
 Use the removeLastFlavor function below to do the following:
     1. Receive receive an array
@@ -113,10 +113,12 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(minusOne){
-	return originalFlavors.pop(minusOne);
+    minusOne.pop();
+    return minusOne;
 }
-removeLastFlavor(originalFlavors);
-console.log(originalFlavors);
+
+console.log(removeLastFlavor(originalFlavors));
+
 
 
 
@@ -151,9 +153,30 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(){
+
 }
+// Work in Progress..............
+// function removeFlavorByName(ori, junk){
+//     for(let i = 0; i < ori.length; i++){ 
+// 			ori.splice(junk);
+//     }
+// 	return ori;
+// }
+
+// console.log(removeFlavorByName(originalFlavors, "Rocky Road"));
+// /////////////////////////////////////////////////////////////////////
+// function removeFlavorByName(ori, junk){
+//     for(let i = 0; i < ori.length; i++){ 
+// 			if (ori[i].includes("junk")){
+// 					ori.splice("junk");
+// 			}
+// 			return ori;
+//     }
+// }
+
+// console.log(removeFlavorByName(originalFlavors, "Rocky Road"));
+
 
 
 
@@ -176,10 +199,19 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
-}
-
+function filterByWord(ori, item) {
+  
+    let filteredArray = [];
+    
+    for(let i = 0; i < ori.length; i++) {
+      if(ori[i].includes(item)) {
+        filteredArray.push(ori[i])
+      }//if
+    }//for
+   return filteredArray;
+  }//function
+    
+  console.log(filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
